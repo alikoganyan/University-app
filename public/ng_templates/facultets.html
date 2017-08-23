@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">Facultets</div>
+
+        <table class="table table-striped table-hover table-responsive">
+            <thead>
+                <tr>
+                    <td>#</td>
+                    <td>Name</td>
+                    <td>
+                        <button ng-click="addFacultet()" class="btn btn-link">Add 
+                             <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="facultet in facultets">
+                    <td class="col-md-1">{{$index + 1}}</td>
+                    <td class="col-md-1">{{facultet.name}}</td>
+                    <td class="col-md-1">
+                        <button class="btn btn-link" ng-click="editFacultet(facultet)">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <button class="btn btn-link" ng-click="deleteFacultet(facultet)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

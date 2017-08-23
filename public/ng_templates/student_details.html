@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="panel panel-info">
+        <div class="panel-heading">Student Details</div>
+        <div class="panel-body">
+
+            <form role="form" ng-submit="save()" name="studentForm" class="form-horizontal">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label for="studentName" class="col-sm-3 control-label">Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="name" class="form-control" id="studentName" ng-model="student.name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentLastName" class="col-sm-3 control-label">Last Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="last_name" class="form-control" id="studentLastName" ng-model="student.last_name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentPhone" class="col-sm-3 control-label">Phone</label>
+                            <div class="col-sm-9">
+                                <input type="tel" name="phome" class="form-control" id="studentPhone" ng-model="student.phone">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="StudentCourse" class="col-sm-3 control-label">Course</label>
+                            <div class="col-sm-9">
+                                <select name="course_id" class="form-control" id="StudentCourse" required ng-model="student.course_id" ng-options="n for n in [1,2,3,4,5]">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="StudentGroup">Group</label>
+                            <div class="col-sm-9">
+                                <select name="group_id" class="form-control" id="StudentGroup" required ng-model="student.group_id" ng-options="group.id as group.name for group in groups">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="StudentFacultet">Facultet</label>
+                            <div class="col-sm-9">
+                                <select name="facultet_id" class="form-control" id="StudentFacultet" required ng-model="student.facultet_id" ng-options="facultet.id as facultet.name for facultet in facultets">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentPhoto" class="col-sm-3 control-label">Photo</label>
+                            <div class="col-sm-9">
+                                <label class="btn btn-primary">Select File
+                                    <input type="file" id="studentPhoto" name="photo" style="display:none"
+                                        ng-model="student.img" file>
+                                </label>
+                                <i> {{student.img.name}}</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="center">
+                            <img ng-if="img" ng-src="{{img}}" width="100px" class="img-thumbnail">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="btn-group pull-right">
+                    <a href="#!students" class="btn btn-default">Back</a>
+                    <button type="submit" click class="btn btn-success">Save</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

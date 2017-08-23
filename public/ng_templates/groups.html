@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">Groups</div>
+
+        <table class="table table-striped table-hover table-responsive">
+            <thead>
+                <tr>
+                    <td>#</td>
+                    <td>Name</td>
+                    <td>
+                        <button ng-click="addGroup()" class="btn btn-link">Add 
+                             <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="group in groups">
+                    <td class="col-md-1">{{$index + 1}}</td>
+                    <td class="col-md-1">{{group.name}}</td>
+                    <td class="col-md-1">
+                        <button class="btn btn-link" ng-click="editGroup(group)">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <button class="btn btn-link" ng-click="deleteGroup(group)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
